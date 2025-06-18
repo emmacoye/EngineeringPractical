@@ -11,7 +11,7 @@ class WeatherController extends Controller
     public function index(Request $request, WeatherApiService $svc)
     {
         $city = $request->query('city', 'New York');  //DEFAULT
-        $unit = $request->query('unit', 'C');
+        $unit = $request->query('unit', 'F');
 
         try {
             $weather = $svc->getByCity($city);

@@ -24,49 +24,6 @@
         </div>
     </nav>
 
-    <!--<form method="GET" action="{{ url('/') }}" class="mb-6 mt-6 flex justify-center">
-        <input
-            type="text"
-            name="city"
-            value="{{ request('city') }}"
-            placeholder="Enter city"
-            class="border rounded-l px-4 py-2 w-64 focus:outline-none"
-            required
-        />
-        <button
-            type="submit"
-            class="bg-blue-600 text-white rounded-r px-4 py-2 hover:bg-blue-700"
-        >
-            Search
-        </button>
-    </form>-->
-
-    <!--BUTTON TO GO BACK AND FORTH BETWEEN C AND F-->
-   <!-- <form method="GET" action="{{ url('/') }}" class="mb-8 flex justify-center gap-4">
-        <input type="hidden" name="city" value="{{ $city }}">
-
-        <button
-        type="submit"
-        name="unit"
-        value="C"
-        class="rounded-full px-4 py-2
-                {{ $unit === 'C' ? 'bg-blue-700 text-white' : 'bg-blue-300 text-black' }}
-                hover:bg-blue-700 hover:text-white"
-        >
-        Celsius
-        </button>
-
-        <button
-        type="submit"
-        name="unit"
-        value="F"
-        class="rounded-full px-4 py-2
-                {{ $unit === 'F' ? 'bg-blue-700 text-white' : 'bg-blue-300 text-black' }}
-                hover:bg-blue-700 hover:text-white"
-        >
-        Fahrenheit
-        </button>
-    </form>-->
 
     <main class="flex-grow container mx-auto px-4 py-8">
         <livewire:weather-toggle />

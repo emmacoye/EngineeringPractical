@@ -48,7 +48,7 @@ public function getByCity(string $city_name): array
 
     // if it can't find the city
     if (! $geo) {
-        throw new \Exception("Could not find coordinates for “{$city_name}”.");
+        throw new \Exception("Could not find “{$city_name}”, please try again.");
     }
 
     return $this->getCurrentWeather(
