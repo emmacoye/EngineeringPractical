@@ -37,4 +37,24 @@ class WeatherApiService
     };
 }
 
+
+// SEARCHING FOR THE CITY
+public function getByCity(string $city_name): array
+{
+    $geo = Http::get('https://geocoding-api.open-meteo.com/v1/search', [
+        'name'  => $city_name,
+        'count' => 1,
+    ])->json('results.0');
+
+    // if it can't find the city
+    if (! $geo) {
+        throw new \Exception("Could not find coordinates for “{$city_name}”.");
+    }
+
+    return $this->getCurrentWeather(
+        $geo['latitude'],
+        $geo['longitude']
+    );
+}
+
 }

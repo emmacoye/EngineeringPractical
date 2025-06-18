@@ -47,14 +47,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Temperature & Condition -->
                     <div class="flex items-center space-x-4">
-                        <div class="text-5xl font-bold">XX&deg;</div>
-                        <div class="text-xl self-end">Sunny</div>
+                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;</div>
+                        <div class="text-xl self-end">{{ $weather['condition'] }}</div>
                     </div>
                     <!-- Details -->
                     <div class="space-y-2">
-                        <p><span class="font-semibold">Humidity:</span> X%</p>
-                        <p><span class="font-semibold">Wind Speed:</span> X km/h</p>
-                        <p><span class="font-semibold">Feels Like:</span> XX&deg;</p>
+                        <p><span class="font-semibold">Humidity: </span> {{$weather['humidity']}}%</p>
+                        <p><span class="font-semibold">Wind Speed:</span> {{$weather['windspeed']}} km/h</p>
+                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;</p>
                     </div>
                 </div>
             </div>
