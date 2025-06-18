@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     @vite('resources/css/app.css')
+    @livewireStyles
     <title>Welcome to Laravel Starter</title>
 </head>
 <body class="flex flex-col min-h-screen h-full">
@@ -68,6 +69,7 @@
     </form>
 
     <main class="flex-grow container mx-auto px-4 py-8">
+        <livewire:weather-toggle />
         @if($error)
         <p class="text-red-600 text-center mb-4">{{ $error }}</p>
         @elseif($weather)
@@ -129,6 +131,6 @@
     });
     </script>
 
-
+@livewireScripts
 </body>
 </html>
