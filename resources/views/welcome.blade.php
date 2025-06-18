@@ -41,6 +41,9 @@
 </form>
 
     <main class="flex-grow container mx-auto px-4 py-8">
+        @if($error)
+        <p class="text-red-600 text-center mb-4">{{ $error }}</p>
+        @elseif($weather)
         <div class="bg-white shadow-lg rounded-lg w-full overflow-hidden">
             <div class="p-6">
                 <h1 class="text-2xl font-bold mb-4">{{ ucwords($city) }}</h1>
@@ -59,6 +62,7 @@
                 </div>
             </div>
         </div>
+        @endif
     </main>
 
     <!-- Footer -->
