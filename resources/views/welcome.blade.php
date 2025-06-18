@@ -23,6 +23,23 @@
         </div>
     </nav>
 
+    <form method="GET" action="{{ url('/') }}" class="mb-6 mt-6 flex justify-center">
+    <input
+        type="text"
+        name="city"
+        value="{{ request('city') }}"
+        placeholder="Enter city"
+        class="border rounded-l px-4 py-2 w-64 focus:outline-none"
+        required
+    />
+    <button
+        type="submit"
+        class="bg-blue-600 text-white rounded-r px-4 py-2 hover:bg-blue-700"
+    >
+        Search
+    </button>
+</form>
+
     <main class="flex-grow container mx-auto px-4 py-8">
         <div class="bg-white shadow-lg rounded-lg w-full overflow-hidden">
             <div class="p-6">
