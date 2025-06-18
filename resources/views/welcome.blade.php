@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--This is stage branch-->
     <meta charset="UTF-8">
     <title>Welcome to Laravel Starter</title>
 </head>
