@@ -44,14 +44,14 @@
     <div class="mb-6 mt-6 flex justify-center gap-10">
         <button
             type="submit"
-            class="bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700"
+            class="bg-blue-300 text-black rounded-full px-4 py-2 hover:bg-blue-700 hover:text-white"
         >
             Celcius
         </button>
 
         <button
             type="submit"
-            class="bg-blue-600 text-white rounded-full px-4 py-2 hover:bg-blue-700"
+            class="bg-blue-300 text-black rounded-full px-4 py-2 hover:bg-blue-700 hover:text-white"
         >
             Farenheit
         </button>
