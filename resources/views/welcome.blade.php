@@ -41,21 +41,31 @@
     </form>
 
     <!--BUTTON TO GO BACK AND FORTH BETWEEN C AND F-->
-    <div class="mb-6 mt-6 flex justify-center gap-10">
+    <form method="GET" action="{{ url('/') }}" class="mb-8 flex justify-center gap-4">
+        <input type="hidden" name="city" value="{{ $city }}">
+
         <button
-            type="submit"
-            class="bg-blue-300 text-black rounded-full px-4 py-2 hover:bg-blue-700 hover:text-white"
+        type="submit"
+        name="unit"
+        value="C"
+        class="rounded-full px-4 py-2
+                {{ $unit === 'C' ? 'bg-blue-700 text-white' : 'bg-blue-300 text-black' }}
+                hover:bg-blue-700 hover:text-white"
         >
-            Celcius
+        Celsius
         </button>
 
         <button
-            type="submit"
-            class="bg-blue-300 text-black rounded-full px-4 py-2 hover:bg-blue-700 hover:text-white"
+        type="submit"
+        name="unit"
+        value="F"
+        class="rounded-full px-4 py-2
+                {{ $unit === 'F' ? 'bg-blue-700 text-white' : 'bg-blue-300 text-black' }}
+                hover:bg-blue-700 hover:text-white"
         >
-            Farenheit
+        Fahrenheit
         </button>
-    </div>
+    </form>
 
     <main class="flex-grow container mx-auto px-4 py-8">
         @if($error)
@@ -67,14 +77,14 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Temperature & Condition -->
                     <div class="flex items-center space-x-4">
-                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;C</div>
+                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;{{$unit}}</div>
                         <div class="text-xl self-end">{{ $weather['condition'] }}</div>
                     </div>
                     <!-- Details -->
                     <div class="space-y-2">
                         <p><span class="font-semibold">Humidity: </span> {{$weather['humidity']}}%</p>
                         <p><span class="font-semibold">Wind Speed:</span> {{$weather['windspeed']}} km/h</p>
-                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;C</p>
+                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;{{$unit}}</p>
                     </div>
                 </div>
             </div>

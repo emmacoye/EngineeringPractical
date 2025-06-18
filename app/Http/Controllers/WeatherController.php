@@ -11,6 +11,7 @@ class WeatherController extends Controller
     public function index(Request $request, WeatherApiService $svc)
     {
         $city = $request->query('city', 'New York');  //DEFAULT
+        $unit = $request->query('unit', 'C');
 
         try {
             $weather = $svc->getByCity($city);
@@ -20,6 +21,11 @@ class WeatherController extends Controller
             $error   = $e->getMessage();
         }
 
-        return view('welcome', compact('weather', 'city', 'error'));
+        if (isset($weather) && $unit === 'F') {
+            $weather['temperature'] = round($weather['temperature'] * 9/5 + 32);
+            $weather['feels_like']  = round($weather['feels_like']  * 9/5 + 32);
+        }
+
+        return view('welcome', compact('weather', 'city', 'unit', 'error'));
     }
 }
