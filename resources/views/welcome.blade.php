@@ -70,6 +70,17 @@
         </div>
     </footer>
 
+    <!--NOT PERFECT-->
+    <script>
+        const btn = document.getElementById('nav-toggle');
+        const menu = document.getElementById('nav-links');
+        btn.addEventListener('click', () => {
+        const open = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!open));
+        menu.classList.toggle('hidden');
+    });
+    </script>
+
 
 </body>
 </html>
