@@ -24,7 +24,7 @@
         </div>
     </nav>
 
-    <form method="GET" action="{{ url('/') }}" class="mb-6 mt-6 flex justify-center">
+    <!--<form method="GET" action="{{ url('/') }}" class="mb-6 mt-6 flex justify-center">
         <input
             type="text"
             name="city"
@@ -39,10 +39,10 @@
         >
             Search
         </button>
-    </form>
+    </form>-->
 
     <!--BUTTON TO GO BACK AND FORTH BETWEEN C AND F-->
-    <form method="GET" action="{{ url('/') }}" class="mb-8 flex justify-center gap-4">
+   <!-- <form method="GET" action="{{ url('/') }}" class="mb-8 flex justify-center gap-4">
         <input type="hidden" name="city" value="{{ $city }}">
 
         <button
@@ -66,32 +66,10 @@
         >
         Fahrenheit
         </button>
-    </form>
+    </form>-->
 
     <main class="flex-grow container mx-auto px-4 py-8">
         <livewire:weather-toggle />
-        @if($error)
-        <p class="text-red-600 text-center mb-4">{{ $error }}</p>
-        @elseif($weather)
-        <div class="bg-white shadow-lg rounded-lg w-full overflow-hidden">
-            <div class="p-6">
-                <h1 class="text-2xl font-bold mb-4">{{ ucwords($city) }}</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Temperature & Condition -->
-                    <div class="flex items-center space-x-4">
-                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;{{$unit}}</div>
-                        <div class="text-xl self-end">{{ $weather['condition'] }}</div>
-                    </div>
-                    <!-- Details -->
-                    <div class="space-y-2">
-                        <p><span class="font-semibold">Humidity: </span> {{$weather['humidity']}}%</p>
-                        <p><span class="font-semibold">Wind Speed:</span> {{$weather['windspeed']}} km/h</p>
-                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;{{$unit}}</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @endif
     </main>
 
     <!-- Footer -->
@@ -121,6 +99,7 @@
     </footer>
 
     <!--NOT PERFECT-->
+    @livewireScripts
     <script>
         const btn = document.getElementById('nav-toggle');
         const menu = document.getElementById('nav-links');
@@ -130,7 +109,5 @@
         menu.classList.toggle('hidden');
     });
     </script>
-
-@livewireScripts
 </body>
 </html>

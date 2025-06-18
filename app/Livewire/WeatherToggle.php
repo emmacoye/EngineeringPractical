@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use Livewire\Component;
+use App\Services\WeatherApiService;
 
 class WeatherToggle extends Component
 {
@@ -11,7 +12,7 @@ class WeatherToggle extends Component
     public $weather    = [];
     public $error      = null;
 
-    protected WeatherApiService $svc;
+    protected $svc;
 
     public function mount(WeatherApiService $svc)
     {
@@ -20,7 +21,7 @@ class WeatherToggle extends Component
     }
 
     public function updatedCity()    { $this->loadWeather(); }
-    public function updatedUnit()    { /* no extra work—view will re-render with new unit */ }
+    public function updatedUnit()    { }
 
     private function loadWeather()
     {
