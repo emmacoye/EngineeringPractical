@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     @vite('resources/css/app.css')
     @livewireStyles
-    <title>Welcome to Laravel Starter</title>
+    <title>Weather Dashboard</title>
 </head>
 <body class="flex flex-col min-h-screen h-full">
     <!--FIX-->

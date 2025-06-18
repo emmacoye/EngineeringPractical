@@ -2,7 +2,7 @@
 <div class="flex flex-col items-center space-y-6">
 <h2 class="text-xl self-start mb-2"><strong>Check weather for...</strong></h2>
 <!--FIND CITY-->
-  <div class="flex self-start">
+  <div class="flex self-start mb-2">
     <input
       wire:model.lazy="city"
       type="text"
