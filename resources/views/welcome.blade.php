@@ -43,18 +43,18 @@
     <main class="flex-grow container mx-auto px-4 py-8">
         <div class="bg-white shadow-lg rounded-lg w-full overflow-hidden">
             <div class="p-6">
-                <h1 class="text-2xl font-bold mb-4">Current Weather</h1>
+                <h1 class="text-2xl font-bold mb-4">{{ ucwords($city) }}</h1>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Temperature & Condition -->
                     <div class="flex items-center space-x-4">
-                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;</div>
+                        <div class="text-5xl font-bold">{{ $weather['temperature'] }}&deg;C</div>
                         <div class="text-xl self-end">{{ $weather['condition'] }}</div>
                     </div>
                     <!-- Details -->
                     <div class="space-y-2">
                         <p><span class="font-semibold">Humidity: </span> {{$weather['humidity']}}%</p>
                         <p><span class="font-semibold">Wind Speed:</span> {{$weather['windspeed']}} km/h</p>
-                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;</p>
+                        <p><span class="font-semibold">Feels Like:</span> {{$weather['feels_like']}}&deg;C</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +66,7 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center justify-between">
             <p class="text-sm">&copy; {{ date('Y') }} Weather Dashboard</p>
             <div class="flex space-x-4 mt-2 md:mt-0">
-                <!-- Social Icons -->
+                <!--Icons -->
                 <a href="#" aria-label="Twitter" class="hover:text-white">
                     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
                         <path d="M24 4.557a9.93 9.93 0 0 1-2.828.775 4.932 4.932 0 0 0 2.165-2.724c-.951.555-2.005.959-3.127 1.184A4.916 4.916 0 0 0 16.616 3c-2.717 0-4.92 2.203-4.92 4.917 0 .386.043.762.127 1.124C7.728 8.82 4.1 6.873 1.671 3.902a4.822 4.822 0 0 0-.666 2.475c0 1.708.87 3.213 2.188 4.096a4.904 4.904 0 0 1-2.228-.616v.062c0 2.385 1.693 4.374 3.946 4.827a4.935 4.935 0 0 1-2.224.084c.627 1.956 2.444 3.379 4.6 3.421A9.868 9.868 0 0 1 0 19.54a13.94 13.94 0 0 0 7.548 2.212c9.051 0 14.001-7.496 14.001-13.986 0-.213-.005-.425-.014-.636A10.012 10.012 0 0 0 24 4.557z"/>
